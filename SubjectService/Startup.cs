@@ -40,7 +40,7 @@ namespace SubjectService
             services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
             services.AddScoped<ISubjectRepository, SubjectRepository>();
             services.AddScoped<ISubjectMethods, SubjectMethods>();
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
 
         }
 

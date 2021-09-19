@@ -12,6 +12,6 @@ namespace SubjectService.Models
         public string Subtitle { get; set; }
         public string Content { get; set; }
         public bool IsVisible { get; set; }
-        public short Type { get; set; }
+        public int Type { get; set; }
     }
 }

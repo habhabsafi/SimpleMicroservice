@@ -23,12 +23,17 @@ namespace SubjectService.Controllers
         {
             return _subjectService.GetSubjectById(id);
         }
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+            _subjectService.DeleteSubject(id);
+        }
         [HttpGet]
         public IEnumerable<Subject> Get()
         {
             return _subjectService.GetAllSubjects();
         }
-        [HttpGet]
+        [HttpGet("{page},{countPerPage}")]
         public IEnumerable<Subject> Get(int page , int countPerPage)
         {
             return _subjectService.GetAllPaged(page,countPerPage,out int totalCount);
