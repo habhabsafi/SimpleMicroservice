@@ -61,6 +61,18 @@
       "UpstreamHttpMethod": [ "GET", "DELETE" ]
     },
     {
+      "DownstreamPathTemplate": "/api/Subject/GetAll?page={page}&countPerPage={counterPerPage}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "52926"
+        }
+      ],
+      "UpstreamPathTemplate": "/AllSubjects/{page}/{counterPerPage}"
+      //"UpstreamHttpMethod": [ "GET" ]
+    },
+    {
       "DownstreamPathTemplate": "/api/subject",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
