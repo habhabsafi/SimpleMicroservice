@@ -37,21 +37,30 @@ namespace SubjectService.Controllers
         [HttpGet, Route("GetAll")]
         public ClientResponseModel<IEnumerable<Subject>> GetAll(int page, int countPerPage)
         {
-            ClientResponseModel<IEnumerable<Subject>> model = new ClientResponseModel<IEnumerable<Subject>>();
-
-            model.Record = _subjectService.GetAllPaged(page, countPerPage, out int totalCount);
-            model.ExtraData = totalCount;
+            ClientResponseModel<IEnumerable<Subject>> model = new ClientResponseModel<IEnumerable<Subject>>
+            {
+                Record = _subjectService.GetAllPaged(page, countPerPage, out int totalCount),
+                ExtraData = totalCount
+            };
             return model;
         }
         [HttpPut]
-        public void Put(Subject subject)
+        public ClientResponseModel<Subject> Put(EditSubjectModel subject)
         {
-            _subjectService.EditSubject(subject);
+            ClientResponseModel<Subject> responseModel = new ClientResponseModel<Subject>
+            {
+                Record = _subjectService.EditSubject(subject)
+        };
+            return responseModel;
         }
         [HttpPost]
-        public void Post(Subject subject)
+        public ClientResponseModel<Subject> Post(AddSubjectModel subject)
         {
-            _subjectService.AddSubject(subject);
+            ClientResponseModel<Subject> responseModel = new ClientResponseModel<Subject>
+            {
+                Record = _subjectService.AddSubject(subject)
+            };
+            return responseModel;
         }
     }
 }

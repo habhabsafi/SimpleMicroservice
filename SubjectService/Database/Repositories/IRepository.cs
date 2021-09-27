@@ -12,7 +12,7 @@ namespace SubjectService.Database.Repositories
         IEnumerable<CEntity> GetAll();
         CEntity GetById(int id);
         CEntity GetById(int id, string[] include = null);
-        void Add(CEntity entity);
+        CEntity Add(CEntity entity);
         CEntity Update(CEntity entity);
         IEnumerable<CEntity> GetAll(int page, int counterPerPage, out int totalCount);
         void Delete(int id);

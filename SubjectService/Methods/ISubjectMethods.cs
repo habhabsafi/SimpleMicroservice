@@ -11,8 +11,8 @@ namespace SubjectService.Methods
         IEnumerable<Subject> GetAllSubjects();
         IEnumerable<Subject> GetAllPaged(int page, int counterPerPage, out int totalCount );
         Subject GetSubjectById(int subjectId);
-        void AddSubject(Subject subject);
-        void DeleteSubject(int subjectId); 
-        void EditSubject(Subject subject); 
+        Subject AddSubject(AddSubjectModel subject);
+        void DeleteSubject(int subjectId);
+        Subject EditSubject(EditSubjectModel subject); 
     }
 }

@@ -13,8 +13,9 @@ namespace SubjectService.Database.Entities
         [MaxLength(255)]
         public string Subtitle { get; set; }
         public string Content { get; set; }
+        [MaxLength(10)]
+        public string ImageExtension { get; set; }
         public bool IsVisible { get; set; }
         public int Type { get; set; }
-
     }
 }

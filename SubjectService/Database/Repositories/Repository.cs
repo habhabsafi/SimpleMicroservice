@@ -73,12 +73,17 @@ namespace SubjectService.Database.Repositories
             return dbEntity!=null? _mapper.Map<CEntity>(dbEntity):null;
             
         }
-        public virtual void Add(CEntity entity)
+        public virtual CEntity Add(CEntity entity)
         {
             if(entity==null)
             throw new ArgumentNullException("null entity when adding");
-            entities.Add(_mapper.Map<TEntity>(entity));
-            context.SaveChanges();
+            TEntity dbEntity = _mapper.Map<TEntity>(entity);
+          entities.Add(dbEntity);
+            if (context.SaveChanges() > 0)
+            {
+                return GetById(dbEntity.Id);
+            }
+            else return default;
         }
 
         public virtual CEntity Update(CEntity entity)

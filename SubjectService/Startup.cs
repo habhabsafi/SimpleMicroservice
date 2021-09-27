@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Saderlexstore.Utility;
 using SubjectService.Database;
 using SubjectService.Database.Repositories;
 using SubjectService.Methods;
@@ -23,9 +24,9 @@ namespace SubjectService
         {
             Configuration = configuration;
         }
-
+        
         public IConfiguration Configuration { get; }
-
+        
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -40,6 +41,8 @@ namespace SubjectService
             services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
             services.AddScoped<ISubjectRepository, SubjectRepository>();
             services.AddScoped<ISubjectMethods, SubjectMethods>();
+            services.AddSingleton<IDataHelper, DataHelper>();
+
             services.AddControllers().AddNewtonsoftJson();
 
         }
