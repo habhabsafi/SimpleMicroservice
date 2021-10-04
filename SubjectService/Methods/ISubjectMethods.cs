@@ -11,6 +11,7 @@ namespace SubjectService.Methods
         IEnumerable<Subject> GetAllSubjects();
         IEnumerable<Subject> GetAllPaged(int page, int counterPerPage, out int totalCount );
         Subject GetSubjectById(int subjectId);
+        IEnumerable<Subject> GetAllFiltered(SubjectFilter subjectFilter, out int totalCount);
         Subject AddSubject(AddSubjectModel subject);
         void DeleteSubject(int subjectId);
         Subject EditSubject(EditSubjectModel subject); 

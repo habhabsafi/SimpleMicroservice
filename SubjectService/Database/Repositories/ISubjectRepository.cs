@@ -8,5 +8,6 @@ namespace SubjectService.Database.Repositories
     public interface ISubjectRepository : IRepository<Entities.Subject, Subject>
     {
         Subject GetByName(string title);
+        List<Subject> GetAllFiltered(SubjectFilter subjectFilter, out int totalCount);
     }
 }

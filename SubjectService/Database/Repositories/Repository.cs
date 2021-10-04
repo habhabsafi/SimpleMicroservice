@@ -48,7 +48,6 @@ namespace SubjectService.Database.Repositories
             return Filter().OrderByDescending(c => c.Id)
                 .Skip(page * counterPerPage)
                 .Take(counterPerPage)
-                .ToList()
                 .Select(_mapper.Map<CEntity>)
                 .ToList();
             //return entities.AsEnumerable();

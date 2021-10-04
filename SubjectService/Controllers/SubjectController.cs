@@ -19,9 +19,13 @@ namespace SubjectService.Controllers
             _subjectService = subjectService;
         }
         [HttpGet("{id}")]
-        public Subject Get(int id)
+        public ClientResponseModel<Subject> Get(int id)
         {
-            return _subjectService.GetSubjectById(id);
+            ClientResponseModel<Subject> responseModel = new ClientResponseModel<Subject>
+            {
+                Record = _subjectService.GetSubjectById(id)
+            };
+            return responseModel;
         }
         [HttpDelete("{id}")]
         public void Delete(int id)
@@ -29,14 +33,19 @@ namespace SubjectService.Controllers
             _subjectService.DeleteSubject(id);
         }
         [HttpGet]
-        public IEnumerable<Subject> Get()
+        public ClientResponseModel<IEnumerable<Subject>> Get()
         {
-            return _subjectService.GetAllSubjects();
+            ClientResponseModel<IEnumerable<Subject>> responseModel = new ClientResponseModel<IEnumerable<Subject>>
+            {
+                Record = _subjectService.GetAllSubjects()
+            };
+            return responseModel;
         }
 
         [HttpGet, Route("GetAll")]
         public ClientResponseModel<IEnumerable<Subject>> GetAll(int page, int countPerPage)
         {
+          
             ClientResponseModel<IEnumerable<Subject>> model = new ClientResponseModel<IEnumerable<Subject>>
             {
                 Record = _subjectService.GetAllPaged(page, countPerPage, out int totalCount),
@@ -44,6 +53,18 @@ namespace SubjectService.Controllers
             };
             return model;
         }
+        [HttpPost, Route("GetAllFiltered")]
+        public ClientResponseModel<IEnumerable<Subject>> GetAllFiltered([FromBody] SubjectFilter subjectFilter)
+        {
+
+            ClientResponseModel<IEnumerable<Subject>> model = new ClientResponseModel<IEnumerable<Subject>>
+            {
+                Record = _subjectService.GetAllFiltered(subjectFilter, out int totalCount),
+                ExtraData = totalCount
+            };
+            return model;
+        }
+
         [HttpPut]
         public ClientResponseModel<Subject> Put(EditSubjectModel subject)
         {

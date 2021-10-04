@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace SubjectService.Models
@@ -32,6 +33,7 @@ namespace SubjectService.Models
             }
         }
     }
+    
     public class AddSubjectModel : Subject
     {
         public string ImageData { get; set; }
@@ -40,5 +42,14 @@ namespace SubjectService.Models
     {
         public string ImageData { get; set; }
         public override string ImagePath { get; set; }
+    }
+    public class SubjectFilter
+    {
+       public int Page { get; set; }
+        public int CountPerPage { get; set; }
+
+        public string SearchKey { get; set; }
+        public bool FilterVisible { get; set; }
+        public int Type { get; set; }
     }
 }
