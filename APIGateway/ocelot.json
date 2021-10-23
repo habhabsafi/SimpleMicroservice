@@ -72,18 +72,7 @@
       "UpstreamPathTemplate": "/Subjects/GetAll/{page}/{countPerPage}"
       //"UpstreamHttpMethod": [ "GET" ]
     },
-    {
-      "DownstreamPathTemplate": "/api/Subject/GetAll?page={page}&countPerPage={countPerPage}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "52926"
-        }
-      ],
-      "UpstreamPathTemplate": "/AllSubjects/{page}/{countPerPage}"
-      //"UpstreamHttpMethod": [ "GET" ]
-    },
+ 
     {
       "DownstreamPathTemplate": "/api/subject",
       "DownstreamScheme": "http",
@@ -95,6 +84,19 @@
       ],
       "UpstreamPathTemplate": "/subject",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Subject/GetAllFiltered",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "52926"
+        }
+      ],
+      "UpstreamPathTemplate": "/Subjects/GetAllFiltered",
+      "UpstreamHttpMethod": [ "POST" ]
+
     }
 
   ]

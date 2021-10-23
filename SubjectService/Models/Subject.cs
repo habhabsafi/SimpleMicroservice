@@ -33,7 +33,7 @@ namespace SubjectService.Models
             }
         }
     }
-    
+  
     public class AddSubjectModel : Subject
     {
         public string ImageData { get; set; }
@@ -43,13 +43,19 @@ namespace SubjectService.Models
         public string ImageData { get; set; }
         public override string ImagePath { get; set; }
     }
+    public enum SubjectSortProps
+    {
+        Title, Subtitle
+    }
     public class SubjectFilter
     {
        public int Page { get; set; }
         public int CountPerPage { get; set; }
-
-        public string SearchKey { get; set; }
+        public string KeyWord { get; set; }
         public bool FilterVisible { get; set; }
-        public int Type { get; set; }
+        public int? Type { get; set; }
+        public int? SubjectSortBy { get;set; }
+        public bool SortDesc { get; set; }
+
     }
 }
