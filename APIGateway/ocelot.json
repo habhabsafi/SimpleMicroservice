@@ -60,18 +60,18 @@
       "UpstreamPathTemplate": "/subject/{id}",
       "UpstreamHttpMethod": [ "GET", "DELETE" ]
     },
-    {
-      "DownstreamPathTemplate": "/api/Subject/GetAll?page={page}&countPerPage={countPerPage}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "52926"
-        }
-      ],
-      "UpstreamPathTemplate": "/Subjects/GetAll/{page}/{countPerPage}"
-      //"UpstreamHttpMethod": [ "GET" ]
-    },
+    //{
+    //  "DownstreamPathTemplate": "/api/Subject/GetAll?page={page}&countPerPage={countPerPage}",
+    //  "DownstreamScheme": "http",
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "localhost",
+    //      "Port": "52926"
+    //    }
+    //  ],
+    //  "UpstreamPathTemplate": "/Subjects/GetAll/{page}/{countPerPage}"
+    //  //"UpstreamHttpMethod": [ "GET" ]
+    //},
  
     {
       "DownstreamPathTemplate": "/api/subject",
@@ -96,6 +96,32 @@
       ],
       "UpstreamPathTemplate": "/Subjects/GetAllFiltered",
       "UpstreamHttpMethod": [ "POST" ]
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/Authentication/login",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "65037"
+        }
+      ],
+      "UpstreamPathTemplate": "/authentication/login",
+      "UpstreamHttpMethod": [ "POST" ]
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/Authentication/verify",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "65037"
+        }
+      ],
+      "UpstreamPathTemplate": "/authentication/verify",
+      "UpstreamHttpMethod": [ "GET" ]
 
     }
 

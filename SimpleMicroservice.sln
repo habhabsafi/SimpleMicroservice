@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIGateway", "APIGateway\AP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SubjectService", "SubjectService\SubjectService.csproj", "{A96E1BE4-BED2-462D-8C60-49027E8EF792}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JWTMicroNetCore", "JWTMicroNetCore\JWTMicroNetCore.csproj", "{BA5970A0-6396-4DAD-BAD0-A93EDFD61408}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excuter", "Excuter\Excuter.csproj", "{300F0129-D303-4176-8713-0B433F6E3C97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{A96E1BE4-BED2-462D-8C60-49027E8EF792}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A96E1BE4-BED2-462D-8C60-49027E8EF792}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A96E1BE4-BED2-462D-8C60-49027E8EF792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA5970A0-6396-4DAD-BAD0-A93EDFD61408}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA5970A0-6396-4DAD-BAD0-A93EDFD61408}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA5970A0-6396-4DAD-BAD0-A93EDFD61408}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA5970A0-6396-4DAD-BAD0-A93EDFD61408}.Release|Any CPU.Build.0 = Release|Any CPU
+		{300F0129-D303-4176-8713-0B433F6E3C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{300F0129-D303-4176-8713-0B433F6E3C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{300F0129-D303-4176-8713-0B433F6E3C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{300F0129-D303-4176-8713-0B433F6E3C97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
